@@ -102,51 +102,157 @@ void disabled() {}
  */
 void competition_initialize() {
 	while (true) {
+		pros::lcd::clear_line(1);
+		pros::lcd::clear_line(2);
+
 		pros::lcd::print(1, "Cycle Through Autons with R1 & L1");
 		pros::lcd::print(2, "Cycle Through Drives with R2 & L2");
 
 		switch(autonChoicer) {
 			case 0:
-			pros::lcd::print(4, "No Auton");
+			pros::lcd::clear_line(4);
+			pros::lcd::clear_line(5);
+			pros::lcd::clear_line(6);
+			
+			pros::lcd::print(4, "Previous: Nothing Selected");
+			pros::lcd::print(5, "Current: No Auton");
+			pros::lcd::print(6, "Next: Prototype");
+			break;
+
 			case 1:
-			pros::lcd::print(4, "Auton: AWP, Red Alliance, Rings");
+			pros::lcd::clear_line(4);
+			pros::lcd::clear_line(5);
+			pros::lcd::clear_line(6);
+
+			pros::lcd::print(4, "Previous: No Auton");
+			pros::lcd::print(5, "Current: Prototype");
+			pros::lcd::print(6, "Next: AWP, Red Alliance, Rings");
 			break;
+
 			case 2:
-			pros::lcd::print(4, "Auton: AWP, Red Alliance, Mobile Goal");
+			pros::lcd::clear_line(4);
+			pros::lcd::clear_line(5);
+			pros::lcd::clear_line(6);
+			
+			pros::lcd::print(4, "Previous: Prototype");
+			pros::lcd::print(5, "Current: AWP, Red Alliance, Rings");
+			pros::lcd::print(6, "Next: AWP, Red Alliance, Mobile Goal");
 			break;
+
 			case 3:
-			pros::lcd::print(4, "Auton: AWP, Blue Alliance, Extra Rings");
+			pros::lcd::clear_line(4);
+			pros::lcd::clear_line(5);
+			pros::lcd::clear_line(6);
+
+			pros::lcd::print(4, "Previous: AWP, Red Alliance, Rings");
+			pros::lcd::print(5, "Current: AWP, Red Alliance, Mobile Goal");
+			pros::lcd::print(6, "Next: AWP, Blue Alliance, Rings");
 			break;
+
 			case 4:
-			pros::lcd::print(4, "Auton: AWP, Blue Alliance, Extra Mobile Goal");
+			pros::lcd::clear_line(4);
+			pros::lcd::clear_line(5);
+			pros::lcd::clear_line(6);
+
+			pros::lcd::print(4, "Previous: AWP, Red Alliance, Mobile Goal");
+			pros::lcd::print(5, "Current: AWP, Blue Alliance, Rings");
+			pros::lcd::print(6, "Next: AWP, Blue Alliance, Mobile Goal");
 			break;
+
 			case 5:
-			pros::lcd::print(4, "Auton: No AWP, Red Alliance, Rings");
+			pros::lcd::clear_line(4);
+			pros::lcd::clear_line(5);
+			pros::lcd::clear_line(6);
+
+			pros::lcd::print(4, "Previous: AWP, Blue Allianve, Rings");
+			pros::lcd::print(5, "Current: AWP, Blue Alliance, Mobile Goal");
+			pros::lcd::print(6, "Next: No AWP, Red Alliance, Rings");
 			break;
+
 			case 6:
-			pros::lcd::print(4, "Auton: No AWP, Red Alliance, Mobile Goal");
+			pros::lcd::clear_line(4);
+			pros::lcd::clear_line(5);
+			pros::lcd::clear_line(6);
+
+			pros::lcd::print(4, "AWP, Blue Alliance, Mobile Goal");
+			pros::lcd::print(5, "Current: No AWP, Red Alliance, Rings");
+			pros::lcd::print(6, "Next: No AWP, Red Alliance, Mobile Goal");
 			break;
+
 			case 7:
-			pros::lcd::print(4, "Auton: No AWP, Blue Alliance, Extra Rings");
+			pros::lcd::clear_line(4);
+			pros::lcd::clear_line(5);
+			pros::lcd::clear_line(6);
+
+			pros::lcd::print(4, "Previous: No AWP, Red Alliance, Rings");
+			pros::lcd::print(5, "Current: No AWP, Red Alliance, Mobile Goal");
+			pros::lcd::print(6, "Next: No AWP, Blue Alliance, Rings");
 			break;
+
 			case 8:
-			pros::lcd::print(4, "Auton: No AWP, Blue Alliance, Extra Mobile Goal");
+			pros::lcd::clear_line(4);
+			pros::lcd::clear_line(5);
+			pros::lcd::clear_line(6);
+
+			pros::lcd::print(4, "Previous: No AWP, Red Alliance, Mobile Goal");
+			pros::lcd::print(5, "Current: No AWP, Blue Alliance, Rings");
+			pros::lcd::print(6, "Next: No AWP, Blue Alliance, Mobile Goal");
 			break;
+
+			case 9:
+			pros::lcd::clear_line(4);
+			pros::lcd::clear_line(5);
+			pros::lcd::clear_line(6);
+
+			pros::lcd::print(4, "Previous: No AWP, Blue Alliance, Rings");
+			pros::lcd::print(5, "Current: No AWP, Blue Alliance, Mobile Goal");
+			pros::lcd::print(6, "Nothing Selected");
+			break;
+
 			default:
+			pros::lcd::clear_line(4);
+			pros::lcd::clear_line(5);
+			pros::lcd::clear_line(6);
+
 			pros::lcd::print(4, "Lost in the sauce? Press A to reset");
 		}
 		switch(driveChoicer) {
 			case 0:
-			pros::lcd::print(5, "Drive Method: Tank");
+			pros::lcd::clear_line(7);
+			pros::lcd::clear_line(8);
+			pros::lcd::clear_line(9);
+
+			pros::lcd::print(7, "Previous: Nothing Selected");
+			pros::lcd::print(8, "Current Drive Method: Tank");
+			pros::lcd::print(9, "Next: Curvature Drive");
 			break;
+
 			case 1:
-			pros::lcd::print(5, "Drive Method: Curvature");
+			pros::lcd::clear_line(7);
+			pros::lcd::clear_line(8);
+			pros::lcd::clear_line(9);
+
+			pros::lcd::print(7, "Previous: Tank Drive");
+			pros::lcd::print(8, "Drive Method: Curvature");
+			pros::lcd::print(9, "Next: Arcade Drive");
 			break;
+
 			case 2:
-			pros::lcd::print(5, "Drive Method: Arcade");
+			pros::lcd::clear_line(7);
+			pros::lcd::clear_line(8);
+			pros::lcd::clear_line(9);
+
+			pros::lcd::print(7, "Previous: Curvature Drive");
+			pros::lcd::print(8, "Drive Method: Arcade");
+			pros::lcd::print(9, "Next: Nothing Selected");
 			break;
+
 			default:
-			pros::lcd::print(4, "Lost in the sauce? Press A to reset");
+			pros::lcd::clear_line(7);
+			pros::lcd::clear_line(8);
+			pros::lcd::clear_line(9);
+
+			pros::lcd::print(7, "Lost in the sauce? Press A to reset");
 		}
 
 		if(controller.get_digital(DIGITAL_R1)) {
